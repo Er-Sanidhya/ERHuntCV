@@ -1,0 +1,127 @@
+﻿@model List<ERHuntCV.Models.ActivityLogModel>
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+    ViewData["Title"] = "Activity Log";
+    ViewData["Panel"] = "Candidate";
+    ViewData["UserName"] = Context.Session.GetString("CandidateName");
+}
+
+<div class="container-fluid">
+
+    <div class="master-table-container">
+
+        <!-- =====================================================
+             TABLE HEADER
+             ===================================================== -->
+
+        <div class="master-table-title">
+
+            <div>
+
+                <h2>
+                    Activity Log
+                </h2>
+
+                <p>
+                    View your recent login activity
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             ACTIVITY TABLE
+             ===================================================== -->
+
+        <table id="activityLogTable"
+               class="master-data-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Sr. No.
+                    </th>
+
+                    <th>
+                        Access Type
+                    </th>
+
+                    <th>
+                        IP Address
+                    </th>
+
+                    <th>
+                        Location
+                    </th>
+
+                    <th>
+                        Date / Time
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                @if (Model != null && Model.Count > 0)
+                {
+                    int srNo = 1;
+
+                    foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td class="master-id">
+                                @srNo
+                            </td>
+
+                            <td>
+                                @item.AccessType
+                            </td>
+
+                            <td>
+                                @item.IPAddress
+                            </td>
+
+                            <td>
+                                @item.Location
+                            </td>
+
+                            <td>
+                                @item.DateTime.ToString("dd-MM-yyyy hh:mm tt")
+                            </td>
+
+                        </tr>
+
+                        srNo++;
+                    }
+                }
+
+            </tbody>
+
+        </table>
+
+
+        <!-- =====================================================
+             PAGE INFORMATION
+             ===================================================== -->
+
+        <div id="activityLogPageInfo"
+             class="master-page-info text-center">
+        </div>
+
+    </div>
+
+</div>@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

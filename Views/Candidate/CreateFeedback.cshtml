@@ -1,0 +1,631 @@
+﻿@model ERHuntCV.Models.CandidateFeedbackViewModel
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+    ViewData["Title"] = "Add Feedback";
+    ViewData["Panel"] = "Candidate";
+    ViewData["UserName"] = "Candidate";
+}
+
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/CandidateFeedback.css"
+          asp-append-version="true" />
+}
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+
+<div class="candidate-feedback-page">
+
+    <!-- =====================================================
+         PAGE HEADING
+         ===================================================== -->
+    <div class="feedback-page-heading">
+
+        <div class="feedback-heading-left">
+
+            <div class="feedback-heading-icon">
+                <i class="bi bi-chat-square-heart-fill"></i>
+            </div>
+
+            <div>
+                <h1>Candidate Feedback</h1>
+
+                <p>
+                    Your feedback helps us improve the 1Trainee platform.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="feedback-question-badge">
+            <i class="bi bi-list-check"></i>
+            5 Questions
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN FEEDBACK CARD
+         ===================================================== -->
+    <div class="candidate-feedback-card">
+
+
+        <!-- =================================================
+             LEFT INFORMATION SECTION
+             ================================================= -->
+        <div class="feedback-side">
+
+            <div class="feedback-side-icon">
+                <i class="bi bi-chat-heart"></i>
+            </div>
+
+            <h2>
+                Help Us Make 1Trainee Better
+            </h2>
+
+            <p class="feedback-side-description">
+                We value your experience. Take a moment to share
+                your honest feedback about the platform and help us
+                create a better experience for every candidate.
+            </p>
+
+
+            <!-- Feature 1 -->
+            <div class="feedback-feature">
+
+                <i class="bi bi-lightning-charge-fill"></i>
+
+                <span>
+                    Improve platform experience
+                </span>
+
+            </div>
+
+
+            <!-- Feature 2 -->
+            <div class="feedback-feature">
+
+                <i class="bi bi-graph-up-arrow"></i>
+
+                <span>
+                    Help us improve our services
+                </span>
+
+            </div>
+
+
+            <!-- Feature 3 -->
+            <div class="feedback-feature">
+
+                <i class="bi bi-people-fill"></i>
+
+                <span>
+                    Make 1Trainee better for candidates
+                </span>
+
+            </div>
+
+
+            <div class="feedback-secure">
+
+                <i class="bi bi-shield-lock-fill"></i>
+
+                Your feedback is secure and valuable to us.
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT FORM SECTION
+             ================================================= -->
+        <div class="feedback-form-section">
+
+
+            <!-- Form Header -->
+            <div class="feedback-form-header">
+
+                <h2>
+                    Share Your Experience
+                </h2>
+
+                <p>
+                    Please answer the following questions honestly.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 BACKEND FORM
+                 ================================================= -->
+            <form asp-controller="Candidate"
+                  asp-action="CreateFeedback"
+                  method="post">
+
+                @Html.AntiForgeryToken()
+
+
+                <!-- =================================================
+                     QUESTIONS 1 - 4
+                     ================================================= -->
+                <div class="feedback-question-grid">
+
+
+                    <!-- =================================================
+                         QUESTION 1
+                         Backend: sQue1
+                         ================================================= -->
+                    <div class="feedback-question-card">
+
+                        <div class="feedback-question-number">
+                            01
+                        </div>
+
+                        <div class="feedback-question-text">
+                            @Model.Que1
+                        </div>
+
+
+                        <div class="feedback-options">
+
+                            <div class="feedback-option">
+
+                                <input type="radio"
+                                       asp-for="sQue1"
+                                       value="True"
+                                       id="que1True" />
+
+                                <label for="que1True">
+                                    <i class="bi bi-hand-thumbs-up me-2"></i>
+                                    Yes
+                                </label>
+
+                            </div>
+
+
+                            <div class="feedback-option">
+
+                                <input type="radio"
+                                       asp-for="sQue1"
+                                       value="False"
+                                       id="que1False" />
+
+                                <label for="que1False">
+                                    <i class="bi bi-hand-thumbs-down me-2"></i>
+                                    No
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <span asp-validation-for="sQue1"
+                              class="feedback-validation">
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         QUESTION 2
+                         Backend: sQue2
+                         ================================================= -->
+                    <div class="feedback-question-card">
+
+                        <div class="feedback-question-number">
+                            02
+                        </div>
+
+                        <div class="feedback-question-text">
+                            @Model.Que2
+                        </div>
+
+
+                        <div class="feedback-stars"
+                             data-rating="sQue2">
+
+                            <i class="bi bi-star-fill feedback-star"
+                               data-value="1"></i>
+
+                            <i class="bi bi-star-fill feedback-star"
+                               data-value="2"></i>
+
+                            <i class="bi bi-star-fill feedback-star"
+                               data-value="3"></i>
+
+                            <i class="bi bi-star-fill feedback-star"
+                               data-value="4"></i>
+
+                            <i class="bi bi-star-fill feedback-star"
+                               data-value="5"></i>
+
+                        </div>
+
+
+                        <input type="hidden"
+                               asp-for="sQue2"
+                               id="sQue2" />
+
+
+                        <span asp-validation-for="sQue2"
+                              class="feedback-validation">
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         QUESTION 3
+                         Backend: sQue3
+                         ================================================= -->
+                    <div class="feedback-question-card">
+
+                        <div class="feedback-question-number">
+                            03
+                        </div>
+
+                        <div class="feedback-question-text">
+                            @Model.Que3
+                        </div>
+
+
+                        <div class="feedback-options">
+
+                            <div class="feedback-option">
+
+                                <input type="radio"
+                                       asp-for="sQue3"
+                                       value="Yes"
+                                       id="que3Yes" />
+
+                                <label for="que3Yes">
+                                    <i class="bi bi-check-circle me-2"></i>
+                                    Yes
+                                </label>
+
+                            </div>
+
+
+                            <div class="feedback-option">
+
+                                <input type="radio"
+                                       asp-for="sQue3"
+                                       value="No"
+                                       id="que3No" />
+
+                                <label for="que3No">
+                                    <i class="bi bi-x-circle me-2"></i>
+                                    No
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <span asp-validation-for="sQue3"
+                              class="feedback-validation">
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         QUESTION 4
+                         Backend: sQue4
+                         ================================================= -->
+                    <div class="feedback-question-card">
+
+                        <div class="feedback-question-number">
+                            04
+                        </div>
+
+                        <div class="feedback-question-text">
+                            @Model.Que4
+                        </div>
+
+
+                        <div class="feedback-emoji-options">
+
+                            <div class="feedback-emoji-option">
+
+                                <input type="radio"
+                                       asp-for="sQue4"
+                                       value="1"
+                                       id="que4_1" />
+
+                                <label for="que4_1"
+                                       title="Very Bad">
+                                    😞
+                                </label>
+
+                            </div>
+
+
+                            <div class="feedback-emoji-option">
+
+                                <input type="radio"
+                                       asp-for="sQue4"
+                                       value="2"
+                                       id="que4_2" />
+
+                                <label for="que4_2"
+                                       title="Bad">
+                                    😕
+                                </label>
+
+                            </div>
+
+
+                            <div class="feedback-emoji-option">
+
+                                <input type="radio"
+                                       asp-for="sQue4"
+                                       value="3"
+                                       id="que4_3" />
+
+                                <label for="que4_3"
+                                       title="Average">
+                                    😐
+                                </label>
+
+                            </div>
+
+
+                            <div class="feedback-emoji-option">
+
+                                <input type="radio"
+                                       asp-for="sQue4"
+                                       value="4"
+                                       id="que4_4" />
+
+                                <label for="que4_4"
+                                       title="Good">
+                                    🙂
+                                </label>
+
+                            </div>
+
+
+                            <div class="feedback-emoji-option">
+
+                                <input type="radio"
+                                       asp-for="sQue4"
+                                       value="5"
+                                       id="que4_5" />
+
+                                <label for="que4_5"
+                                       title="Excellent">
+                                    😍
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <span asp-validation-for="sQue4"
+                              class="feedback-validation">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUESTION 5 - SUGGESTIONS
+                     Backend: sQue5
+                     ================================================= -->
+                <div class="feedback-suggestion-card">
+
+                    <div class="feedback-question-number">
+                        05
+                    </div>
+
+                    <div class="feedback-question-text">
+                        @Model.Que5
+                    </div>
+
+
+                    <textarea asp-for="sQue5"
+                              class="feedback-textarea"
+                              id="sQue5"
+                              maxlength="500"
+                              placeholder="Write your suggestions or comments here..."></textarea>
+
+
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+
+                        <span asp-validation-for="sQue5"
+                              class="feedback-validation">
+                        </span>
+
+                        <small id="feedbackCharCount"
+                               class="text-muted ms-auto">
+                            0 / 500
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     FORM FOOTER
+                     ================================================= -->
+                <div class="feedback-form-footer">
+
+                    <button type="reset"
+                            class="feedback-btn feedback-btn-clear">
+
+                        <i class="bi bi-arrow-counterclockwise me-1"></i>
+
+                        Clear
+
+                    </button>
+
+
+                    <button type="submit"
+                            class="feedback-btn feedback-btn-submit">
+
+                        <i class="bi bi-send-fill me-1"></i>
+
+                        Submit Feedback
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        /* =================================================
+           STAR RATING - sQue2
+           ================================================= */
+
+        const starContainer =
+            document.querySelector(".feedback-stars");
+
+        const starInput =
+            document.getElementById("sQue2");
+
+        if (starContainer && starInput) {
+
+            const stars =
+                starContainer.querySelectorAll(".feedback-star");
+
+            function updateStars(value) {
+
+                stars.forEach(function (star) {
+
+                    const starValue =
+                        parseInt(star.getAttribute("data-value"));
+
+                    if (starValue <= value) {
+                        star.classList.add("active");
+                    }
+                    else {
+                        star.classList.remove("active");
+                    }
+
+                });
+
+            }
+
+
+            stars.forEach(function (star) {
+
+                star.addEventListener("click", function () {
+
+                    const value =
+                        parseInt(this.getAttribute("data-value"));
+
+                    starInput.value = value;
+
+                    updateStars(value);
+
+                });
+
+
+                star.addEventListener("mouseenter", function () {
+
+                    const value =
+                        parseInt(this.getAttribute("data-value"));
+
+                    stars.forEach(function (item) {
+
+                        const itemValue =
+                            parseInt(item.getAttribute("data-value"));
+
+                        if (itemValue <= value) {
+                            item.classList.add("active");
+                        }
+                        else {
+                            item.classList.remove("active");
+                        }
+
+                    });
+
+                });
+
+            });
+
+
+            starContainer.addEventListener("mouseleave", function () {
+
+                const currentValue =
+                    parseInt(starInput.value || "0");
+
+                updateStars(currentValue);
+
+            });
+
+
+            /* Restore selected value after validation */
+
+            if (starInput.value) {
+
+                updateStars(
+                    parseInt(starInput.value)
+                );
+
+            }
+
+        }
+
+
+        /* =================================================
+           CHARACTER COUNTER - sQue5
+           ================================================= */
+
+        const suggestion =
+            document.getElementById("sQue5");
+
+        const charCount =
+            document.getElementById("feedbackCharCount");
+
+
+        if (suggestion && charCount) {
+
+            function updateCharacterCount() {
+
+                charCount.textContent =
+                    suggestion.value.length + " / 500";
+
+            }
+
+            suggestion.addEventListener(
+                "input",
+                updateCharacterCount
+            );
+
+            updateCharacterCount();
+
+        }
+
+    });
+
+</script>

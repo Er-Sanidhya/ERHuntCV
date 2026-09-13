@@ -1,0 +1,365 @@
+﻿@model IEnumerable<ERHuntCV.Models.SAOrgFeedbackM>
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+    ViewData["Title"] = "Organization Feedback Details";
+    ViewData["Panel"] = "SuperAdmin";
+    ViewData["UserName"] = "Super Admin";
+}
+
+
+<div class="feedback-page">
+
+
+    <!-- =====================================================
+         PAGE TITLE
+         ===================================================== -->
+
+    <div class="feedback-page-header">
+
+        <div class="feedback-page-icon">
+
+            <i class="fas fa-comments"></i>
+
+        </div>
+
+
+        <div>
+
+            <h1 class="feedback-title">
+
+                Organization Feedback Details
+
+            </h1>
+
+
+            <p class="feedback-subtitle">
+
+                View and manage trainee feedback records
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- =====================================================
+         ORGANIZATION NAME
+         ===================================================== -->
+
+    @* <div class="organization-name">
+        @ViewBag.OrganizationName
+    </div> *@
+
+
+    <!-- =====================================================
+         MASTER TABLE CONTAINER
+         ===================================================== -->
+
+    <div class="master-table-container">
+
+
+        <!-- =================================================
+             TABLE TITLE
+             ================================================= -->
+
+        <div class="master-table-title">
+
+            <div>
+
+                <h2>
+                    <i class="fas fa-table"></i>
+                    Feedback
+                </h2>
+
+                <p>
+                    View trainee questions and answers
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FEEDBACK TABLE
+             ================================================= -->
+
+        <table id="feedbackTable"
+               class="master-data-table">
+
+            <thead>
+
+                <tr>
+
+                    <!-- SrNo -->
+                    <th class="master-col-sm">
+                        SrNo.
+                    </th>
+
+
+                    <!-- Question 1 -->
+                    <th class="master-col-lg">
+                        Que 1
+                    </th>
+
+                    <!-- Answer 1 -->
+                    <th class="master-col-md">
+                        Ans 1
+                    </th>
+
+
+                    <!-- Question 2 -->
+                    <th class="master-col-lg">
+                        Que 2
+                    </th>
+
+                    <!-- Answer 2 -->
+                    <th class="master-col-md">
+                        Ans 2
+                    </th>
+
+
+                    <!-- Question 3 -->
+                    <th class="master-col-lg">
+                        Que 3
+                    </th>
+
+                    <!-- Answer 3 -->
+                    <th class="master-col-md">
+                        Ans 3
+                    </th>
+
+
+                    <!-- Question 4 -->
+                    <th class="master-col-lg">
+                        Que 4
+                    </th>
+
+                    <!-- Answer 4 -->
+                    <th class="master-col-md">
+                        Ans 4
+                    </th>
+
+
+                    <!-- Question 5 -->
+                    <th class="master-col-lg">
+                        Que 5
+                    </th>
+
+                    <!-- Answer 5 -->
+                    <th class="master-col-md">
+                        Ans 5
+                    </th>
+
+
+                    <!-- Action -->
+                    <th class="master-col-action">
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+
+
+                            <!-- =================================
+                                 SERIAL NUMBER
+                                 ================================= -->
+
+                            <td class="master-sr-no">
+                            </td>
+
+
+                            <!-- =================================
+                                 QUESTION 1
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="question-text">
+                                    @item.Que1
+                                </div>
+
+                            </td>
+
+
+                            <!-- =================================
+                                 ANSWER 1
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="answer-text">
+                                    @item.Ans1
+                                </div>
+
+                            </td>
+
+
+                            <!-- =================================
+                                 QUESTION 2
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="question-text">
+                                    @item.Que2
+                                </div>
+
+                            </td>
+
+
+                            <!-- =================================
+                                 ANSWER 2
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="answer-text">
+                                    @item.Ans2
+                                </div>
+
+                            </td>
+
+
+                            <!-- =================================
+                                 QUESTION 3
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="question-text">
+                                    @item.Que3
+                                </div>
+
+                            </td>
+
+
+                            <!-- =================================
+                                 ANSWER 3
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="answer-text">
+                                    @item.Ans3
+                                </div>
+
+                            </td>
+
+
+                            <!-- =================================
+                                 QUESTION 4
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="question-text">
+                                    @item.Que4
+                                </div>
+
+                            </td>
+
+
+                            <!-- =================================
+                                 ANSWER 4
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="answer-text">
+                                    @item.Ans4
+                                </div>
+
+                            </td>
+
+
+                            <!-- =================================
+                                 QUESTION 5
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="question-text">
+                                    @item.Que5
+                                </div>
+
+                            </td>
+
+
+                            <!-- =================================
+                                 ANSWER 5
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="answer-text">
+                                    @item.Ans5
+                                </div>
+
+                            </td>
+
+
+                            <!-- =================================
+                                 ACTION
+                                 ================================= -->
+
+                            <td>
+
+                                <div class="action-buttons">
+
+
+                                    <!-- VIEW -->
+
+                                    <a asp-controller="SuperAdmin"
+                                       asp-action="DetailsSAOrgFeedback"
+                                       asp-route-id="@item.nID"
+                                       class="view-icon"
+                                       title="View">
+
+                                        <i class="fas fa-eye"></i>
+
+                                    </a>
+
+
+                                    <!-- EDIT -->
+
+                                    <a asp-controller="SuperAdmin"
+                                       asp-action="EditSAOrgFeedback"
+                                       asp-route-id="@item.nID"
+                                       class="edit-icon"
+                                       title="Edit">
+
+                                        <i class="fas fa-edit"></i>
+
+                                    </a>
+
+
+                                </div>
+
+                            </td>
+
+
+                        </tr>
+                    }
+                }
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+</div>

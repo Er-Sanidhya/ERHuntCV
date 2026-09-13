@@ -1,0 +1,103 @@
+﻿@model List<ERHuntCV.Models.SuperAdminActivityLogModel>
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+    ViewData["Title"] = "Activity Log";
+    ViewData["Panel"] = "SuperAdmin";
+    ViewData["UserName"] =
+        Context.Session.GetString("SAName");
+}
+
+<div class="container-fluid">
+
+    <div class="master-table-container">
+
+        <div class="master-table-title">
+
+            <div>
+
+                <h2>
+                    Activity Log
+                </h2>
+
+                <p>
+                    View your recent login activity
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <table id="superAdminActivityLogTable"
+               class="master-data-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Sr. No.</th>
+
+                    <th>Access Type</th>
+
+                    <th>IP Address</th>
+
+                    <th>Location</th>
+
+                    <th>Date / Time</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                @if (Model != null && Model.Count > 0)
+                {
+                    int srNo = 1;
+
+                    foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td class="master-id">
+                                @srNo
+                            </td>
+
+                            <td>
+                                @item.AccessType
+                            </td>
+
+                            <td>
+                                @item.IPAddress
+                            </td>
+
+                            <td>
+                                @item.Location
+                            </td>
+
+                            <td>
+                                @item.DateTime.ToString(
+                                    "dd-MM-yyyy hh:mm tt")
+                            </td>
+
+                        </tr>
+
+                        srNo++;
+                    }
+                }
+
+            </tbody>
+
+        </table>
+
+
+        <div id="superAdminActivityLogPageInfo"
+             class="master-page-info text-center">
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,126 @@
+﻿@model List<ERHuntCV.Models.OrganizationActivityLogModel>
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+    ViewData["Title"] = "OrgActivity Log";
+    ViewData["Panel"] = "Organization";
+    ViewData["UserName"] =
+        Context.Session.GetString("OrgName");
+}
+
+
+<div class="container-fluid">
+
+    <div class="master-table-container">
+
+        <!-- =====================================================
+             TABLE HEADER
+             ===================================================== -->
+
+        <div class="master-table-title">
+
+            <div>
+
+                <h2>
+                    Activity Log
+                </h2>
+
+                <p>
+                    View your organization's recent login activity
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             ACTIVITY TABLE
+             ===================================================== -->
+
+        <table id="organizationActivityLogTable"
+               class="master-data-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Sr. No.
+                    </th>
+
+                    <th>
+                        Access Type
+                    </th>
+
+                    <th>
+                        IP Address
+                    </th>
+
+                    <th>
+                        Location
+                    </th>
+
+                    <th>
+                        Date / Time
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                @if (Model != null && Model.Count > 0)
+                {
+                    int srNo = 1;
+
+                    foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td class="master-id">
+                                @srNo
+                            </td>
+
+                            <td>
+                                @item.AccessType
+                            </td>
+
+                            <td>
+                                @item.IPAddress
+                            </td>
+
+                            <td>
+                                @item.Location
+                            </td>
+
+                            <td>
+                                @item.DateTime.ToString(
+                                    "dd-MM-yyyy hh:mm tt")
+                            </td>
+
+                        </tr>
+
+                        srNo++;
+                    }
+                }
+
+            </tbody>
+
+        </table>
+
+
+        <!-- =====================================================
+             PAGE INFORMATION
+             ===================================================== -->
+
+        <div id="organizationActivityLogPageInfo"
+             class="master-page-info text-center">
+        </div>
+
+    </div>
+
+</div>

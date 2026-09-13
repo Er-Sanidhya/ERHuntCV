@@ -1,0 +1,232 @@
+﻿/* ========================================================= FEEDBACK PAGE ========================================================= */
+
+.feedback-container {
+    width: 100%;
+    padding: 5px 0 25px;
+}
+/* ========================================================= PAGE HEADER ========================================================= */
+
+.feedback-page-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.feedback-page-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1e7b67;
+    color: #ffffff;
+    border-radius: 12px;
+    font-size: 21px;
+    box-shadow: 0 8px 20px rgba(30, 123, 103, 0.18);
+    flex-shrink: 0;
+}
+
+.feedback-page-heading {
+    min-width: 0;
+}
+
+.feedback-title {
+    margin: 0;
+    color: #252b48;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.feedback-subtitle {
+    margin: 5px 0 0;
+    color: #777;
+    font-size: 14px;
+}
+/* ========================================================= FEEDBACK TABLE - SPECIFIC COLUMN WIDTHS Common MasterTable.css handles the main table design. These rules only customize this feedback table. ========================================================= */ /* QUESTION COLUMNS */
+
+#feedbackTable th:nth-child(1), #feedbackTable td:nth-child(1), #feedbackTable th:nth-child(3), #feedbackTable td:nth-child(3), #feedbackTable th:nth-child(5), #feedbackTable td:nth-child(5), #feedbackTable th:nth-child(7), #feedbackTable td:nth-child(7), #feedbackTable th:nth-child(9), #feedbackTable td:nth-child(9) {
+    min-width: 260px !important;
+    width: 260px !important;
+}
+/* ANSWER COLUMNS */
+
+#feedbackTable th:nth-child(2), #feedbackTable td:nth-child(2), #feedbackTable th:nth-child(4), #feedbackTable td:nth-child(4), #feedbackTable th:nth-child(6), #feedbackTable td:nth-child(6), #feedbackTable th:nth-child(8), #feedbackTable td:nth-child(8), #feedbackTable th:nth-child(10), #feedbackTable td:nth-child(10) {
+    min-width: 220px !important;
+    width: 220px !important;
+}
+/* ACTION COLUMN */
+
+#feedbackTable th:nth-child(11), #feedbackTable td:nth-child(11) {
+    min-width: 110px !important;
+    width: 110px !important;
+    max-width: 110px !important;
+    white-space: nowrap !important;
+}
+/* ========================================================= QUESTION TEXT ========================================================= */
+
+.question-text {
+    color: #303848;
+    font-size: 13px;
+    line-height: 1.55;
+    font-weight: 500;
+    text-align: left;
+}
+/* ========================================================= ANSWER TEXT ========================================================= */
+
+.answer-text {
+    color: #555;
+    font-size: 13px;
+    line-height: 1.55;
+    text-align: left;
+}
+/* ========================================================= ACTION BUTTONS ========================================================= */
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+/* ========================================================= VIEW BUTTON ========================================================= */
+
+.view-icon, .edit-icon {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
+}
+/* VIEW */
+
+.view-icon {
+    background: #e8f4f1;
+    color: #1e7b67 !important;
+}
+
+    .view-icon:hover {
+        background: #1e7b67;
+        color: #ffffff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(30, 123, 103, 0.20);
+    }
+/* EDIT */
+
+.edit-icon {
+    background: #eef0f7;
+    color: #252b48 !important;
+}
+
+    .edit-icon:hover {
+        background: #252b48;
+        color: #ffffff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(37, 43, 72, 0.18);
+    }
+    /* ========================================================= ICON SIZE ========================================================= */
+
+    .view-icon i, .edit-icon i {
+        font-size: 14px;
+    }
+/* ========================================================= TABLE ROW TEXT ========================================================= */
+
+#feedbackTable tbody td {
+    line-height: 1.5;
+}
+    /* ========================================================= EMPTY TABLE ========================================================= */
+
+    #feedbackTable tbody td.text-center {
+        text-align: center !important;
+        color: #777;
+        font-size: 14px;
+        padding: 25px !important;
+    }
+/* ========================================================= PAGE INFO ========================================================= */
+
+#feedbackPageInfo {
+    margin-top: 10px;
+}
+/* ========================================================= TABLE CARD TITLE ICON ========================================================= */
+
+.master-table-title h2 i {
+    color: #1e7b67;
+    margin-right: 8px;
+    font-size: 22px;
+}
+/* ========================================================= RESPONSIVE ========================================================= */
+
+@media (max-width: 768px) {
+    .feedback-container {
+        padding-bottom: 20px;
+    }
+
+    .feedback-page-header {
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .feedback-page-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+
+    .feedback-title {
+        font-size: 22px;
+    }
+
+    .feedback-subtitle {
+        font-size: 13px;
+    }
+    /* Keep feedback table wide. Common MasterTable.js handles scrolling. */
+
+    #feedbackTable th:nth-child(1), #feedbackTable td:nth-child(1), #feedbackTable th:nth-child(3), #feedbackTable td:nth-child(3), #feedbackTable th:nth-child(5), #feedbackTable td:nth-child(5), #feedbackTable th:nth-child(7), #feedbackTable td:nth-child(7), #feedbackTable th:nth-child(9), #feedbackTable td:nth-child(9) {
+        min-width: 230px !important;
+        width: 230px !important;
+    }
+
+    #feedbackTable th:nth-child(2), #feedbackTable td:nth-child(2), #feedbackTable th:nth-child(4), #feedbackTable td:nth-child(4), #feedbackTable th:nth-child(6), #feedbackTable td:nth-child(6), #feedbackTable th:nth-child(8), #feedbackTable td:nth-child(8), #feedbackTable th:nth-child(10), #feedbackTable td:nth-child(10) {
+        min-width: 200px !important;
+        width: 200px !important;
+    }
+
+    .question-text, .answer-text {
+        font-size: 12px;
+    }
+}
+/* ========================================================= SMALL MOBILE ========================================================= */
+
+@media (max-width: 480px) {
+    .feedback-page-header {
+        align-items: flex-start;
+    }
+
+    .feedback-page-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .feedback-title {
+        font-size: 19px;
+    }
+
+    .feedback-subtitle {
+        font-size: 12px;
+    }
+
+    #feedbackTable th:nth-child(1), #feedbackTable td:nth-child(1), #feedbackTable th:nth-child(3), #feedbackTable td:nth-child(3), #feedbackTable th:nth-child(5), #feedbackTable td:nth-child(5), #feedbackTable th:nth-child(7), #feedbackTable td:nth-child(7), #feedbackTable th:nth-child(9), #feedbackTable td:nth-child(9) {
+        min-width: 210px !important;
+        width: 210px !important;
+    }
+
+    #feedbackTable th:nth-child(2), #feedbackTable td:nth-child(2), #feedbackTable th:nth-child(4), #feedbackTable td:nth-child(4), #feedbackTable th:nth-child(6), #feedbackTable td:nth-child(6), #feedbackTable th:nth-child(8), #feedbackTable td:nth-child(8), #feedbackTable th:nth-child(10), #feedbackTable td:nth-child(10) {
+        min-width: 180px !important;
+        width: 180px !important;
+    }
+}

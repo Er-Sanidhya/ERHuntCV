@@ -1,0 +1,697 @@
+﻿/* =========================================================
+   CANDIDATE FEEDBACK
+   Premium Deep Navy / Slate Blue / Royal Blue / Indigo
+   NO GREEN / NO TEAL
+   ========================================================= */
+
+.feedback-page {
+    min-height: calc(100vh - 78px);
+    padding: 28px 35px 55px;
+    background: radial-gradient( circle at 10% 10%, rgba(53, 104, 168, .08), transparent 30% ), radial-gradient( circle at 90% 80%, rgba(75, 95, 168, .07), transparent 30% ), #f5f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #263746;
+}
+
+.feedback-container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   TOP HEADER
+   ========================================================= */
+
+.feedback-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.feedback-top-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #172b4d;
+}
+
+.feedback-question-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid #dfe6ef;
+    color: #526176;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 3px 12px rgba(23, 43, 77, .05);
+}
+
+    .feedback-question-count i {
+        color: #3568a8;
+    }
+
+/* =========================================================
+   MAIN FEEDBACK CARD
+   ========================================================= */
+
+.feedback-main-card {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 570px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e1e7ef;
+    border-radius: 16px;
+    box-shadow: 0 14px 40px rgba(23, 43, 77, .09), 0 3px 10px rgba(23, 43, 77, .04);
+}
+
+/* =========================================================
+   LEFT BRANDING PANEL
+   ========================================================= */
+
+.feedback-brand-panel {
+    position: relative;
+    overflow: hidden;
+    padding: 34px 27px;
+    background: radial-gradient( circle at 20% 15%, rgba(255,255,255,.18), transparent 27% ), radial-gradient( circle at 90% 90%, rgba(120, 155, 215, .18), transparent 35% ), linear-gradient( 145deg, #172b4d 0%, #274c77 48%, #4b5fa8 100% );
+    color: #ffffff;
+}
+
+    .feedback-brand-panel::before {
+        content: "";
+        position: absolute;
+        width: 190px;
+        height: 190px;
+        right: -95px;
+        top: -85px;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 50%;
+    }
+
+    .feedback-brand-panel::after {
+        content: "";
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        left: -160px;
+        bottom: -145px;
+        border: 1px solid rgba(255,255,255,.10);
+        border-radius: 50%;
+    }
+
+.feedback-brand-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.feedback-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 28px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 14px;
+    background: rgba(255,255,255,.10);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+/* =========================================================
+   BRAND TITLE
+   ========================================================= */
+
+.feedback-brand-title {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1.22;
+    font-weight: 600;
+    letter-spacing: -.3px;
+}
+
+    .feedback-brand-title span {
+        display: block;
+        color: #c9d8f2;
+    }
+
+.feedback-brand-description {
+    margin: 15px 0 27px;
+    color: rgba(255,255,255,.78);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+/* =========================================================
+   LEFT FEATURE ITEMS
+   ========================================================= */
+
+.feedback-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feedback-feature {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 12px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 9px;
+    background: rgba(255,255,255,.07);
+    color: rgba(255,255,255,.88);
+    font-size: 12px;
+    transition: background .2s ease, transform .2s ease;
+}
+
+    .feedback-feature:hover {
+        background: rgba(255,255,255,.12);
+        transform: translateX(3px);
+    }
+
+.feedback-feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 7px;
+    background: rgba(255,255,255,.13);
+    color: #d5e2f5;
+    font-size: 13px;
+}
+
+/* =========================================================
+   SECURE LABEL
+   ========================================================= */
+
+.feedback-secure {
+    position: absolute;
+    z-index: 2;
+    left: 27px;
+    bottom: 27px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255,255,255,.72);
+    font-size: 11px;
+}
+
+    .feedback-secure i {
+        color: #c8d7ed;
+    }
+
+/* =========================================================
+   RIGHT PANEL
+   ========================================================= */
+
+.feedback-form-panel {
+    padding: 31px 34px 27px;
+    background: #ffffff;
+}
+
+/* =========================================================
+   FORM HEADER
+   ========================================================= */
+
+.feedback-form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 17px;
+    margin-bottom: 19px;
+    border-bottom: 1px solid #e7ecf3;
+}
+
+.feedback-form-title {
+    margin: 0;
+    color: #25384f;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.feedback-form-subtitle {
+    margin: 4px 0 0;
+    color: #8995a6;
+    font-size: 12px;
+}
+
+/* =========================================================
+   SUCCESS / ERROR
+   ========================================================= */
+
+.success-message,
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    margin-bottom: 17px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.success-message {
+    color: #315b88;
+    background: #eef3fa;
+    border: 1px solid #d2deed;
+}
+
+.error-message {
+    color: #bd3447;
+    background: #fff1f3;
+    border: 1px solid #f2d0d5;
+}
+
+/* =========================================================
+   QUESTIONS GRID
+   ========================================================= */
+
+.feedback-form {
+    width: 100%;
+}
+
+.feedback-question-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* =========================================================
+   QUESTION CARD
+   ========================================================= */
+
+.feedback-question-box {
+    position: relative;
+    min-height: 135px;
+    padding: 17px 18px;
+    background: #fbfcfe;
+    border: 1px solid #e1e7ef;
+    border-radius: 10px;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+    .feedback-question-box:hover {
+        border-color: #bdcde1;
+        box-shadow: 0 6px 18px rgba(39, 76, 119, .07);
+        transform: translateY(-1px);
+    }
+
+/* =========================================================
+   QUESTION TEXT
+   ========================================================= */
+
+.question-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    min-height: 46px;
+    margin: 0 0 14px;
+    color: #344953;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.question-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    min-width: 27px;
+    border-radius: 7px;
+    background: linear-gradient( 135deg, #315b88, #506db0 );
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(49,91,136,.15);
+}
+
+/* =========================================================
+   RADIO OPTIONS
+   ========================================================= */
+
+.radio-options {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 12px;
+    border: 1px solid #dce4ee;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #566678;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+    .radio-option:hover {
+        border-color: #9eb4d0;
+        background: #f1f5fa;
+        color: #315b88;
+    }
+
+    .radio-option input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 14px;
+        height: 14px;
+        margin: 0;
+        border: 1px solid #9ca9b8;
+        border-radius: 50%;
+        background: #ffffff;
+        position: relative;
+    }
+
+        .radio-option input[type="radio"]:checked {
+            border-color: #5278b5;
+        }
+
+            .radio-option input[type="radio"]:checked::after {
+                content: "";
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                top: 3px;
+                left: 3px;
+                border-radius: 50%;
+                background: #5278b5;
+            }
+
+    .radio-option:has(input:checked) {
+        background: #edf3fa;
+        border-color: #b6c8df;
+        color: #315b88;
+        font-weight: 600;
+    }
+
+/* =========================================================
+   STAR RATING
+   ========================================================= */
+
+.star-options {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    width: fit-content;
+    padding: 5px 8px;
+    border: 1px solid #dce4ee;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.star-input {
+    display: none;
+}
+
+.star {
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #a8b4c2;
+    font-size: 21px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color .15s ease, transform .15s ease;
+}
+
+    .star:hover {
+        color: #5278b5;
+        transform: scale(1.12);
+    }
+
+    .star.active {
+        color: #5278b5;
+    }
+
+/* =========================================================
+   EMOJI
+   ========================================================= */
+
+.emoji-options {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.emoji-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37px;
+    height: 36px;
+    border: 1px solid #dce4ee;
+    border-radius: 8px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+    .emoji-option:hover {
+        border-color: #9eb4d0;
+        background: #f1f5fa;
+        transform: translateY(-2px);
+    }
+
+    .emoji-option input[type="radio"] {
+        display: none;
+    }
+
+.emoji {
+    font-size: 20px;
+    line-height: 1;
+    filter: grayscale(.1);
+}
+
+.emoji-option:has(input:checked) {
+    border-color: #9eb4d0;
+    background: #edf3fa;
+    box-shadow: 0 3px 8px rgba(49,91,136,.10);
+}
+
+/* =========================================================
+   QUESTION 5 - FULL WIDTH
+   ========================================================= */
+
+.feedback-question-wide {
+    grid-column: 1 / -1;
+    min-height: 145px;
+}
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.feedback-textarea {
+    display: block;
+    width: 100%;
+    height: 82px;
+    padding: 11px 13px;
+    border: 1px solid #dce4ee;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #374951;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    outline: none;
+    resize: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+    .feedback-textarea::placeholder {
+        color: #a3adb8;
+    }
+
+    .feedback-textarea:focus {
+        border-color: #6f91bd;
+        box-shadow: 0 0 0 3px rgba(82,120,181,.09);
+    }
+
+/* =========================================================
+   VALIDATION
+   ========================================================= */
+
+.field-validation {
+    display: block;
+    margin-top: 6px;
+    color: #d9364b;
+    font-size: 11px;
+}
+
+/* =========================================================
+   BOTTOM ACTIONS
+   ========================================================= */
+
+.submit-area {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.clear-button,
+.submit-button {
+    height: 38px;
+    padding: 0 17px;
+    border-radius: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+/* =========================================================
+   CLEAR BUTTON
+   ========================================================= */
+
+.clear-button {
+    border: 1px solid #dce3eb;
+    background: #ffffff;
+    color: #687789;
+}
+
+    .clear-button:hover {
+        background: #f3f6fa;
+        border-color: #c5d1df;
+        color: #344953;
+    }
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.submit-button {
+    min-width: 142px;
+    border: 1px solid #315b88;
+    background: linear-gradient( 135deg, #274c77 0%, #3568a8 55%, #4b5fa8 100% );
+    color: #ffffff;
+    box-shadow: 0 5px 13px rgba(39,76,119,.20);
+}
+
+    .submit-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px rgba(39,76,119,.28);
+        background: linear-gradient( 135deg, #1f4168 0%, #2f5d98 55%, #435397 100% );
+    }
+
+    .submit-button:active {
+        transform: translateY(0);
+    }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .feedback-main-card {
+        grid-template-columns: 250px 1fr;
+    }
+
+    .feedback-brand-panel {
+        padding: 28px 22px;
+    }
+
+    .feedback-form-panel {
+        padding: 27px 25px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .feedback-page {
+        padding: 20px;
+    }
+
+    .feedback-main-card {
+        grid-template-columns: 1fr;
+    }
+
+    .feedback-brand-panel {
+        min-height: 270px;
+    }
+
+    .feedback-secure {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin-top: 25px;
+    }
+
+    .feedback-question-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feedback-question-wide {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .feedback-page {
+        padding: 14px;
+    }
+
+    .feedback-top-title {
+        font-size: 20px;
+    }
+
+    .feedback-question-count {
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+
+    .feedback-form-panel {
+        padding: 21px 17px;
+    }
+
+    .feedback-brand-panel {
+        padding: 25px 20px;
+    }
+
+    .feedback-brand-title {
+        font-size: 23px;
+    }
+
+    .feedback-form-header {
+        display: block;
+    }
+
+    .feedback-form-subtitle {
+        margin-top: 6px;
+    }
+
+    .submit-area {
+        justify-content: stretch;
+    }
+
+    .clear-button,
+    .submit-button {
+        flex: 1;
+    }
+}

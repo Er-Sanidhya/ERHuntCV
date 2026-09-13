@@ -1,0 +1,600 @@
+﻿
+@model ERHuntCV.Models.SACandidateFeedbackM
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+    ViewData["Title"] = "Edit Trainee Feedback";
+    ViewData["Panel"] = "SuperAdmin";
+    ViewData["UserName"] = "Super Admin";
+}
+@section Styles{
+
+    <link rel="stylesheet" href="~/css/SAEditFeedback.css" />
+
+}
+
+<div class="feedback-edit-container">
+
+    <div class="feedback-edit-card">
+
+        <!-- =====================================================
+             HEADER
+             ===================================================== -->
+
+        <div class="feedback-card-header">
+
+            <div class="feedback-header-content">
+
+                <div class="feedback-header-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+
+                <div class="feedback-header-text">
+                    <h2>Edit Trainee Feedback</h2>
+                    <p>Review and update the trainee feedback details</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             FORM
+             ===================================================== -->
+
+        <form asp-controller="SuperAdmin"
+              asp-action="EditSAFeedback"
+              method="post">
+
+            @Html.AntiForgeryToken()
+
+            <!-- Hidden Fields -->
+            <input type="hidden" asp-for="nID" />
+            <input type="hidden" asp-for="nSAID" />
+
+
+            <div class="feedback-form-body">
+
+
+                <!-- =================================================
+                     QUESTION 1
+                     ================================================= -->
+
+                <div class="feedback-question">
+
+                    <div class="question-header">
+
+                        <div class="question-number">
+                            01
+                        </div>
+
+                        <h3 class="question-title">
+                            Question 1
+                        </h3>
+
+                    </div>
+
+                    <label class="question-label">
+                        Question
+                    </label>
+
+                    <textarea asp-for="Que1"
+                              class="question-textarea"
+                              placeholder="Enter question..."></textarea>
+
+                    <span asp-validation-for="Que1"
+                          class="text-danger"></span>
+
+
+                    <div class="answer-area">
+
+                        <span class="answer-label">
+                            Answer
+                        </span>
+
+                        <div class="feedback-options">
+
+                            <div class="feedback-option">
+
+                                <input type="radio"
+                                       asp-for="Ans1"
+                                       value="True"
+                                       id="Ans1True" />
+
+                                <label for="Ans1True">
+                                    True
+                                </label>
+
+                            </div>
+
+
+                            <div class="feedback-option">
+
+                                <input type="radio"
+                                       asp-for="Ans1"
+                                       value="False"
+                                       id="Ans1False" />
+
+                                <label for="Ans1False">
+                                    False
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <span asp-validation-for="Ans1"
+                              class="text-danger"></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUESTION 2
+                     ================================================= -->
+
+                <div class="feedback-question">
+
+                    <div class="question-header">
+
+                        <div class="question-number">
+                            02
+                        </div>
+
+                        <h3 class="question-title">
+                            Question 2
+                        </h3>
+
+                    </div>
+
+                    <label class="question-label">
+                        Question
+                    </label>
+
+                    <textarea asp-for="Que2"
+                              class="question-textarea"
+                              placeholder="Enter question..."></textarea>
+
+                    <span asp-validation-for="Que2"
+                          class="text-danger"></span>
+
+
+                    <div class="answer-area">
+
+                        <span class="answer-label">
+                            Rating
+                        </span>
+
+                        <div class="star-rating">
+
+                            <button type="button"
+                                    class="star"
+                                    data-value="1">
+                                ★
+                            </button>
+
+                            <button type="button"
+                                    class="star"
+                                    data-value="2">
+                                ★
+                            </button>
+
+                            <button type="button"
+                                    class="star"
+                                    data-value="3">
+                                ★
+                            </button>
+
+                            <button type="button"
+                                    class="star"
+                                    data-value="4">
+                                ★
+                            </button>
+
+                            <button type="button"
+                                    class="star"
+                                    data-value="5">
+                                ★
+                            </button>
+
+                        </div>
+
+                        <input type="hidden"
+                               asp-for="Ans2"
+                               id="Ans2" />
+
+                        <span asp-validation-for="Ans2"
+                              class="text-danger"></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUESTION 3
+                     ================================================= -->
+
+                <div class="feedback-question">
+
+                    <div class="question-header">
+
+                        <div class="question-number">
+                            03
+                        </div>
+
+                        <h3 class="question-title">
+                            Question 3
+                        </h3>
+
+                    </div>
+
+                    <label class="question-label">
+                        Question
+                    </label>
+
+                    <textarea asp-for="Que3"
+                              class="question-textarea"
+                              placeholder="Enter question..."></textarea>
+
+                    <span asp-validation-for="Que3"
+                          class="text-danger"></span>
+
+
+                    <div class="answer-area">
+
+                        <span class="answer-label">
+                            Answer
+                        </span>
+
+                        <div class="feedback-options">
+
+                            <div class="feedback-option">
+
+                                <input type="radio"
+                                       asp-for="Ans3"
+                                       value="Yes"
+                                       id="Ans3Yes" />
+
+                                <label for="Ans3Yes">
+                                    Yes
+                                </label>
+
+                            </div>
+
+
+                            <div class="feedback-option">
+
+                                <input type="radio"
+                                       asp-for="Ans3"
+                                       value="No"
+                                       id="Ans3No" />
+
+                                <label for="Ans3No">
+                                    No
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <span asp-validation-for="Ans3"
+                              class="text-danger"></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUESTION 4
+                     ================================================= -->
+
+                <div class="feedback-question">
+
+                    <div class="question-header">
+
+                        <div class="question-number">
+                            04
+                        </div>
+
+                        <h3 class="question-title">
+                            Question 4
+                        </h3>
+
+                    </div>
+
+                    <label class="question-label">
+                        Question
+                    </label>
+
+                    <textarea asp-for="Que4"
+                              class="question-textarea"
+                              placeholder="Enter question..."></textarea>
+
+                    <span asp-validation-for="Que4"
+                          class="text-danger"></span>
+
+
+                    <div class="answer-area">
+
+                        <span class="answer-label">
+                            Experience Rating
+                        </span>
+
+                        <div class="emoji-rating">
+
+                            <button type="button"
+                                    class="emoji-option"
+                                    data-value="1"
+                                    title="Very Bad">
+                                😞
+                            </button>
+
+                            <button type="button"
+                                    class="emoji-option"
+                                    data-value="2"
+                                    title="Bad">
+                                😟
+                            </button>
+
+                            <button type="button"
+                                    class="emoji-option"
+                                    data-value="3"
+                                    title="Average">
+                                😐
+                            </button>
+
+                            <button type="button"
+                                    class="emoji-option"
+                                    data-value="4"
+                                    title="Good">
+                                🙂
+                            </button>
+
+                            <button type="button"
+                                    class="emoji-option"
+                                    data-value="5"
+                                    title="Excellent">
+                                😍
+                            </button>
+
+                        </div>
+
+                        <input type="hidden"
+                               asp-for="Ans4"
+                               id="Ans4" />
+
+                        <span asp-validation-for="Ans4"
+                              class="text-danger"></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUESTION 5
+                     ================================================= -->
+
+                <div class="feedback-question">
+
+                    <div class="question-header">
+
+                        <div class="question-number">
+                            05
+                        </div>
+
+                        <h3 class="question-title">
+                            Question 5
+                        </h3>
+
+                    </div>
+
+                    <label class="question-label">
+                        Question
+                    </label>
+
+                    <textarea asp-for="Que5"
+                              class="question-textarea"
+                              placeholder="Enter question..."></textarea>
+
+                    <span asp-validation-for="Que5"
+                          class="text-danger"></span>
+
+
+                    <div class="answer-area">
+
+                        <span class="answer-label">
+                            Trainee Response
+                        </span>
+
+                        <textarea asp-for="Ans5"
+                                  class="feedback-description"
+                                  placeholder="Enter trainee feedback..."></textarea>
+
+                        <span asp-validation-for="Ans5"
+                              class="text-danger"></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     ACTION BUTTONS
+                     ================================================= -->
+
+                <div class="feedback-actions">
+
+                    <a asp-controller="SuperAdmin"
+                       asp-action="SAFeedback"
+                       class="feedback-btn feedback-btn-cancel">
+
+                        <i class="fas fa-times"></i>
+
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="feedback-btn feedback-btn-save">
+
+                        <i class="fas fa-save"></i>
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     VALIDATION
+     ============================================================= -->
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+
+        /* =========================================================
+           STAR RATING
+           ========================================================= */
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const stars = document.querySelectorAll(".star");
+            const ans2 = document.getElementById("Ans2");
+
+            let currentRating = parseInt(ans2.value) || 0;
+
+
+            function updateStars(rating) {
+
+                stars.forEach(function (star) {
+
+                    const value = parseInt(star.dataset.value);
+
+                    if (value <= rating) {
+                        star.classList.add("active");
+                    }
+                    else {
+                        star.classList.remove("active");
+                    }
+
+                });
+            }
+
+
+            updateStars(currentRating);
+
+
+            stars.forEach(function (star) {
+
+                star.addEventListener("mouseenter", function () {
+
+                    const rating =
+                        parseInt(this.dataset.value);
+
+                    updateStars(rating);
+
+                });
+
+
+                star.addEventListener("click", function () {
+
+                    currentRating =
+                        parseInt(this.dataset.value);
+
+                    ans2.value = currentRating;
+
+                    updateStars(currentRating);
+
+                });
+
+            });
+
+
+            const starContainer =
+                document.querySelector(".star-rating");
+
+
+            starContainer.addEventListener("mouseleave", function () {
+
+                updateStars(currentRating);
+
+            });
+
+
+            /* =====================================================
+               EMOJI RATING
+               ===================================================== */
+
+            const emojis =
+                document.querySelectorAll(".emoji-option");
+
+            const ans4 =
+                document.getElementById("Ans4");
+
+
+            let currentEmoji =
+                parseInt(ans4.value) || 0;
+
+
+            function updateEmoji(rating) {
+
+                emojis.forEach(function (emoji) {
+
+                    const value =
+                        parseInt(emoji.dataset.value);
+
+                    if (value === rating) {
+                        emoji.classList.add("selected");
+                    }
+                    else {
+                        emoji.classList.remove("selected");
+                    }
+
+                });
+
+            }
+
+
+            updateEmoji(currentEmoji);
+
+
+            emojis.forEach(function (emoji) {
+
+                emoji.addEventListener("click", function () {
+
+                    currentEmoji =
+                        parseInt(this.dataset.value);
+
+                    ans4.value = currentEmoji;
+
+                    updateEmoji(currentEmoji);
+
+                });
+
+            });
+
+        });
+
+    </script>
+}
+
